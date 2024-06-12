@@ -18,9 +18,9 @@ public class GoodOper {
     }
 
     private void initGoodList() {
-        Good good1 = new Good(1, "��������", BigDecimal.valueOf(1999), 100);
-        Good good2 = new Good(2, "���ŵ���", BigDecimal.valueOf(4999), 100);
-        Good good3 = new Good(3, "С���ֻ�", BigDecimal.valueOf(999), 100);
+        Good good1 = new Good(1, "小米手机", BigDecimal.valueOf(1999), 100);
+        Good good2 = new Good(2, "海尔冰箱", BigDecimal.valueOf(4999), 100);
+        Good good3 = new Good(3, "海信电视", BigDecimal.valueOf(999), 100);
         goodList.add(good1);
         goodList.add(good2);
         goodList.add(good3);
