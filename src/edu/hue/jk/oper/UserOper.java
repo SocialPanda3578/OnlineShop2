@@ -20,11 +20,6 @@ public class UserOper {
         initUserList();
     }
 
-    /**
-     * ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½Ã»ï¿½ï¿½Ð±ï¿½ï¿½ï¿½
-     * ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ admin /admin
-     * ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Í¨ï¿½Ã»ï¿½   scott / tiger
-     */
     private void initUserList() {
         User admin = new User();
         admin.setUsername("admin");
@@ -43,20 +38,16 @@ public class UserOper {
         return currUser;
     }
 
-    // ×¢ï¿½ï¿½ï¿½ï¿½Í¨ï¿½Ã»ï¿½
     public void reg() {
         String username = "";
         String password = "";
         while (true) {
-            System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½:");
-            // ï¿½ï¿½ï¿½ï¿½Scannerï¿½ï¿½ï¿½ï¿½ï¿½scï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½È¡ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,sc.next:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½É¨ï¿½ï¿½ï¿½ï¿½Ð§ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ç¿Õ¸ï¿½Ç»ï¿½ï¿½Ð·ï¿½ï¿½ï¿½ï¿½æ¿ªÊ¼ï¿½ï¿½
-            // Ò»Ö±ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Õ¸ï¿½/ï¿½ï¿½ï¿½Ð·ï¿½Ö®Ç°ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
+            System.out.println("ÇëÊäÈëÓÃ»§Ãû:");
             username = sc.next();
             boolean flag = true;
-            // ï¿½Ð¶ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½
             for (User user : userList) {
                 if (username.equals(user.getUsername())) {
-                    System.out.println("ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½ï¿½Ú£ï¿½");
+                    System.out.println("ÓÃ»§ÃûÒÑ´æÔÚ£¡");
                     flag = false;
                     break;
                 }
@@ -65,9 +56,9 @@ public class UserOper {
             if (flag == false) {
                 continue;
             }
-            // ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½3Î»
+
             if (username.length() < 3) {
-                System.out.println("ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½3Î»ï¿½ï¿½");
+                System.out.println("ÓÃ»§Ãû²»ÄÜÉÙÓÚ3Î»£¡");
                 continue;
             } else {
                 break;
@@ -76,12 +67,12 @@ public class UserOper {
         }
 
         while (true) {
-            System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:");
+            System.out.println("ÇëÊäÈëÃÜÂë£º");
             password = sc.next();
 
-            // ï¿½ï¿½ï¿½ë³¤ï¿½È²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½6Î»
+            // ?????????????6¦Ë
             if (password.length() < 6) {
-                System.out.println("ï¿½ï¿½ï¿½ë³¤ï¿½È²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½6Î»ï¿½ï¿½");
+                System.out.println("ÃÜÂë³¤¶È²»ÄÜÉÙÓÚ6Î»£¡");
                 continue;
             } else {
                 break;
@@ -94,28 +85,26 @@ public class UserOper {
         user.setType(User.Type.normal);
         user.setLogin(false);
         userList.add(user);
-        System.out.println("×¢ï¿½ï¿½É¹ï¿½ï¿½ï¿½");
+        System.out.println("×¢²á³É¹¦£¡");
     }
 
-    // ï¿½ï¿½Â¼
     public void login() {
         String username = "";
         String password = "";
         boolean login_flag = false;
 
-        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½");
+        System.out.println("ÇëÊäÈëÓÃ»§Ãû:");
         while (true) {
             username = sc.next();
-            System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£º");
+            System.out.println("ÇëÊäÈëÃÜÂë:");
             password = sc.next();
 
-            // ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½È·
             for (User user : userList) {
                 if (username.equals(user.getUsername()) && password.equals(user.getPassword())) {
                     if (user.getType().equals(User.Type.normal)) {
-                        System.out.println("ï¿½ï¿½Â¼ï¿½É¹ï¿½ï¿½ï¿½");
+                        System.out.println("µÇÂ¼³É¹¦£¡");
                     } else {
-                        System.out.println("ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½Â¼ï¿½É¹ï¿½ï¿½ï¿½");
+                        System.out.println("¹ÜÀíÔ±µÇÂ¼³É¹¦£¡");
                     }
 
                     currUser = user;
@@ -128,51 +117,47 @@ public class UserOper {
             if (login_flag == true) {
                 break;
             } else {
-                System.out.println("ï¿½ï¿½Â¼Ê§ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½Â¼ï¿½ï¿½");
-                System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½");
+                System.out.println("µÇÂ¼Ê§°Ü£¬ÇëÖØÐÂµÇÂ¼£¡");
+                System.out.println("ÇëÖØÐÂÊäÈëÓÃ»§Ãû£º");
             }
         }
     }
 
-    // ï¿½é¿´ï¿½ï¿½Ç°ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Â¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Ð±ï¿½
     public void showMyGoodList() {
-        System.out.println("**********ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½*********");
-        // ï¿½Ü¼Û¸ï¿½
+        System.out.println("**********Äú¹ºÂòµÄÉÌÆ·ÁÐ±íÈçÏÂ*********");
+
         BigDecimal total = new BigDecimal("0");
         for (Good good : myGoodList) {
             System.out.println(good);
-            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Ü¼Û¸ï¿½
             BigDecimal price = good.getPrice();
             int num = good.getNum();
             total = total.add(price.multiply(BigDecimal.valueOf(num)));
         }
-        System.out.println("ï¿½Ü¼Û¸ï¿½Îªï¿½ï¿½" + total);
+        System.out.println("×Ü¼Û¸ñÎª£º" + total);
     }
 
-    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·
     public void buy(GoodOper goodOper) {
-        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Å£ï¿½");
+        System.out.println("ÇëÊäÈëÄúÒª¹ºÂòµÄÉÌÆ·±àºÅ£º");
         Good good = null;
         while (true) {
             int id = sc.nextInt();
-            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Å²ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ï¢
             good = goodOper.findGoodById(id);
             if (good == null) {
-                System.out.println("Î´ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½Æ·!");
-                System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Å£ï¿½");
+                System.out.println("Î´ÕÒµ½¸ÃÉÌÆ·£¡");
+                System.out.println("ÇëÖØÐÂÊäÈëÄúÒª¹ºÂòµÄÉÌÆ·±àºÅ£º");
             } else {
-                System.out.println("ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Â£ï¿½");
+                System.out.println("Äú½«Òª¹ºÂòµÄÉÌÆ·ÐÅÏ¢ÈçÏÂ£º");
                 System.out.println(good);
                 break;
             }
         }
-        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+        System.out.println("ÇëÊäÈëÄúÒª¹ºÂòµÄÉÌÆ·ÊýÁ¿£º");
         while (true) {
             int num = sc.nextInt();
-            // ï¿½Ð¶Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
             if (num > good.getNum()) {
-                System.out.println("ï¿½ï¿½æ²»ï¿½ï¿½!");
-                System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+                System.out.println("¿â´æ²»×ã£¡");
+                System.out.println("ÇëÖØÐÂÊäÈëÄúÒª¹ºÂòµÄÉÌÆ·ÊýÁ¿£º");
             } else {
                 Good myGood = new Good();
                 try {
@@ -182,10 +167,8 @@ public class UserOper {
                     e.printStackTrace();
                 }
 
-                // ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 myGoodList.add(myGood);
 
-                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 int newNum = good.getNum() - num;
                 good.setNum(newNum);
                 break;
